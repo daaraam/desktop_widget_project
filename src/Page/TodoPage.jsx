@@ -8,7 +8,7 @@ export default function TodoPage() {
 	const [filter, setFilter] = useState(filters[0]);
 
 	return (
-		<Todo>
+		<TodoAndTimerPage>
 			<TodoTap>
 				{filters.map((value, index) => (
 					<span
@@ -21,17 +21,16 @@ export default function TodoPage() {
 				))}
 			</TodoTap>
 			<TodoList filter={filter} />
-		</Todo>
+		</TodoAndTimerPage>
 	);
 }
 
-const Todo = styled.div`
+export const TodoAndTimerPage = styled.div`
 	width: 25rem;
-	height: 80vh;
+	height: 25rem;
 	overflow-y: scroll;
 	border-radius: 40px;
 	background: var(--color-gray);
-	margin: 5rem;
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -47,8 +46,7 @@ const TodoTap = styled.div`
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;
 	align-items: center;
-	/* gap: 3rem; */
 	border-radius: 0.5rem;
-	background: #ffffff;
+	background: var(--color-white);
 	box-shadow: 10px 10px 20px 0px rgba(164, 164, 164, 0.25), -10px -10px 20px 0px rgba(255, 255, 255, 0.67);
 `;
