@@ -40,7 +40,7 @@
     height: 2rem;
     border-radius: 45px;
     transition: 0.4s;
-    background: #fff;
+    background: var(--color-white);
     box-shadow: -4px 0px 13px -109px rgba(0, 0, 0, 0.23) inset;
     -webkit-box-shadow: -4px 0px 13px -109px rgba(0, 0, 0, 0.23) inset;
     -moz-box-shadow: -4px 0px 13px -109px rgba(0, 0, 0, 0.23) inset;

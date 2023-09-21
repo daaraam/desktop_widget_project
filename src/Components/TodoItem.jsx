@@ -14,14 +14,14 @@ const TodoItem = ({ item, onDelete, statusUpdate }) => {
 
 	return (
 		<div>
-			<li className="flex gap-3 py-2 justify-center">
+			<li className="flex justify-center gap-3 py-2">
 				<List>
-					<p>{text}</p>
+					<TodoText>{text}</TodoText>
 					<Switch id={id} status={status} statusChangeHandler={statusChangeHandler} />
 				</List>
 
 				<DeleteBtn onClick={() => onDelete(id)}>
-					<GrClose size={15} />
+					<GrClose size={20} />
 				</DeleteBtn>
 			</li>
 		</div>
@@ -35,14 +35,19 @@ const List = styled.li`
 	align-items: center;
 	border-radius: 0.6rem;
 	width: 80%;
-	height: 4rem;
-	background: rgba(251, 99, 163);
+	background: var(--color-pink);
 	background: linear-gradient(311deg, rgba(249, 209, 226, 1) 4%, rgba(251, 99, 163, 1) 100%);
 	color: white;
 	font-weight: 500;
 	font-size: 1.2rem;
 	padding: 1rem;
 	justify-content: space-between;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1) inset, 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+`;
+const TodoText = styled.p`
+	width: 12rem;
+	white-space: pre-line;
+	word-break: break-all;
 `;
 
 const DeleteBtn = styled.button`
