@@ -27,7 +27,7 @@ export default function TodoPage() {
 
 export const TodoAndTimerPage = styled.div`
 	width: 25rem;
-	height: 25rem;
+	height: 70vh;
 	overflow-y: scroll;
 	border-radius: 40px;
 	background: var(--color-gray);

@@ -21,7 +21,7 @@ const TodoList = ({ filter }) => {
 
 	const filtered = getFilteredItems(todos, filter);
 	return (
-		<div className="pt-3">
+		<div className="pt-7">
 			<ul>
 				<li>
 					{filtered.map(item => (
