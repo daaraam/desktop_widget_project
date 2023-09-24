@@ -54,7 +54,7 @@ const readTodosFromLocalStorage = () => {
 		: [
 				{
 					id: uuid(),
-					text: '예시입니다',
+					text: `todo를 작성해보세요!`,
 					status: 'Active',
 				},
 		  ];

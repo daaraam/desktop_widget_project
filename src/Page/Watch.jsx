@@ -39,7 +39,8 @@ export default function Watch() {
 				<WatchBoard>
 					<img src={timeFace} alt="digital" className="flex items-center justify-center w-full" />
 					<DigitalTime>
-						{hours}:{minutes}
+						<p>{hours}:</p>
+						<p>{minutes}</p>
 					</DigitalTime>
 				</WatchBoard>
 			) : (
@@ -86,12 +87,13 @@ export const WatchBoard = styled.span`
 `;
 
 const DigitalTime = styled.p`
+	display: flex;
 	position: absolute;
 	top: 53px;
 	left: 19px;
 	font-size: 4rem;
 	color: white;
 	font-weight: 900;
-	letter-spacing: 14.3px;
+	letter-spacing: 13px;
 	font-family: 'IAMAPLAYER';
 `;

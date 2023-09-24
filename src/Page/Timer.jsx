@@ -79,7 +79,8 @@ export default function Timer() {
 				<TimerBoard>
 					<img src={frame} alt="frame" />
 					<Time>
-						{minutes >= 10 ? minutes : `0${minutes}`}:{seconds >= 10 ? seconds : `0${seconds}`}
+						<p>{minutes >= 10 ? minutes : `0${minutes}`}:</p>
+						<p>{seconds >= 10 ? seconds : `0${seconds}`}</p>
 					</Time>
 				</TimerBoard>
 				<section className="flex">
@@ -133,6 +134,7 @@ const TimerBoard = styled.div`
 
 const Time = styled.p`
 	position: absolute;
+	display: flex;
 	top: 13px;
 	left: 87px;
 	font-size: 4rem;
