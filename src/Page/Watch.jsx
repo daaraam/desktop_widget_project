@@ -25,7 +25,7 @@ export default function Watch() {
 	};
 
 	return (
-		<WatchAndCalendarAndWeatherPage>
+		<WatchAndCalendarAndWeatherPage className="bg-gray">
 			<WatchTap>
 				<span className={isDigital ? 'Clicked' : 'unClicked'} onClick={toggleWatch}>
 					Digital
@@ -39,8 +39,9 @@ export default function Watch() {
 				<WatchBoard>
 					<img src={timeFace} alt="digital" className="flex items-center justify-center w-full" />
 					<DigitalTime>
-						<p>{hours}:</p>
-						<p>{minutes}</p>
+						<p className="mx-3">{hours}</p>
+						<p className="text-black">:</p>
+						<p className="mx-1">{minutes}</p>
 					</DigitalTime>
 				</WatchBoard>
 			) : (
@@ -55,11 +56,11 @@ export const WatchAndCalendarAndWeatherPage = styled.div`
 	height: 15rem;
 	overflow-y: scroll;
 	border-radius: 40px;
-	background: var(--color-pink);
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	overflow: hidden;
+	filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25)) drop-shadow(-10px -10px 20px #fff);
 `;
 
 const WatchTap = styled.div`
@@ -84,16 +85,17 @@ export const WatchBoard = styled.span`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25)) drop-shadow(-10px -10px 20px #fff);
 `;
 
 const DigitalTime = styled.p`
 	display: flex;
 	position: absolute;
 	top: 53px;
-	left: 19px;
+	left: 15px;
 	font-size: 4rem;
 	color: white;
 	font-weight: 900;
-	letter-spacing: 13px;
+	letter-spacing: 10px;
 	font-family: 'IAMAPLAYER';
 `;

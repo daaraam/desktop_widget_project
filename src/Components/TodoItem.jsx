@@ -5,7 +5,7 @@ import Switch from './Switch';
 import './Switch.css';
 
 const TodoItem = ({ item, onDelete, statusUpdate }) => {
-	const { id, text, status } = item;
+	const { id, text, status, date } = item;
 
 	const statusChangeHandler = e => {
 		const newStatus = e.target.checked ? 'Completed' : 'Active';
@@ -16,7 +16,10 @@ const TodoItem = ({ item, onDelete, statusUpdate }) => {
 		<div>
 			<li className="flex justify-center gap-3 py-2">
 				<List>
-					<TodoText>{text}</TodoText>
+					<div>
+						<TodoText>{text}</TodoText>
+						<span className="text-xs">{date}</span>
+					</div>
 					<Switch id={id} status={status} statusChangeHandler={statusChangeHandler} />
 				</List>
 

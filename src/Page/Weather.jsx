@@ -61,7 +61,7 @@ export default function Weather() {
 	};
 
 	return (
-		<WatchAndCalendarAndWeatherPage>
+		<WatchAndCalendarAndWeatherPage className="text-white bg-purple">
 			{weather.map((weather, index) => (
 				<WeatherBox key={index} weather={weather} />
 			))}

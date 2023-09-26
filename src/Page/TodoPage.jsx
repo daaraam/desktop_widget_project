@@ -34,6 +34,8 @@ export const TodoAndTimerPage = styled.div`
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	filter: drop-shadow(10px 10px 20px rgba(0, 0, 0, 0.25)) drop-shadow(-10px -10px 20px #fff);
+	margin-bottom: 5rem;
 `;
 
 const TodoTap = styled.div`

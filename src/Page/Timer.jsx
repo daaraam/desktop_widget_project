@@ -139,7 +139,6 @@ const Time = styled.p`
 	left: 87px;
 	font-size: 4rem;
 	color: white;
-	text-align: bet;
 	font-weight: 900;
 	letter-spacing: 10px;
 	font-family: 'IAMAPLAYER';

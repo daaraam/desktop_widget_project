@@ -13,14 +13,16 @@
 }
 
 :root {
-  --color-pink: #ffaed0;
-  --color-blue: #2f80ed;
+  --color-pink: #ff80b5;
+  --color-blue: #6f5de3;
   --color-white: #ffffff;
-  --color-gray: #f0f5f8;
+  --color-black: #000000;
+  --color-gray: #ffffff;
+  --color-Darkgray: #010000;
 }
 
 body {
-  padding: 3rem;
+  padding: 5rem;
   width: 100vw;
   height: 100vh;
   font-family: 'GowunDodum-Regular';

@@ -34,7 +34,7 @@ const TodoList = ({ filter }) => {
 					))}
 				</li>
 				<NewTodoModal todos={todos} setTodos={setTodos} />
-			</ul>{' '}
+			</ul>
 		</div>
 	);
 };

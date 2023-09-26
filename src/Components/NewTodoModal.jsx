@@ -1,16 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { GrClose } from 'react-icons/gr';
 import Modal from 'react-modal';
 import uuid from 'react-uuid';
 import styled from 'styled-components';
+import { useDate } from '../Context/DateContext';
 import plusBtn from '../Image/plusBtn.png';
 
 export default function NewTodoModal({ todos, setTodos }) {
-	const textarea = useRef();
-	const handleResizeHeight = () => {
-		textarea.current.style.height = 'auto';
-		textarea.current.style.height = textarea.current.scrollHeight + 'px';
-	};
 	const customStyles = {
 		content: {
 			top: '50%',
@@ -31,17 +27,34 @@ export default function NewTodoModal({ todos, setTodos }) {
 	};
 
 	const [write, setWrite] = useState('');
+	const { date, setDate } = useDate();
+
 	const addButtonHandler = event => {
 		event.preventDefault();
+		const formatDate = date => {
+			const year = date.getFullYear();
+			const month = (date.getMonth() + 1).toString().padStart(2, '0');
+			const day = date.getDate().toString().padStart(2, '0');
+			return `${year}-${month}-${day}`;
+		};
+
 		const newTodo = {
 			id: uuid(),
 			text: write,
 			status: 'Active',
+			date: formatDate,
 		};
+
 		if (write.trim() === '') {
 			return;
 		}
+
 		setTodos([...todos, newTodo]);
+
+		if (!date.includes(formatDate)) {
+			setDate([...date, formatDate]);
+		}
+
 		setWrite('');
 		ModalCloser();
 	};
@@ -85,7 +98,7 @@ const TodoInput = styled.textarea`
 
 const TodoButton = styled.button`
 	border-radius: 0.5rem;
-	background: #32abef;
+	background: var(--color-blue);
 	width: 18rem;
 	height: 3rem;
 	flex-shrink: 0;
